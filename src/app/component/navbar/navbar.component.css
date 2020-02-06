@@ -1,0 +1,12 @@
+.nav-link
+{
+    width: 80px;
+}
+.nav-item
+{
+    padding: 10px;
+}
+.active-link
+{
+    background-color: #10068f;
+}

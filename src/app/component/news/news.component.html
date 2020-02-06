@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div class="col-full" *ngIf="news">
+      <div class="row" data-aos="fade-up" *ngFor="let blogs of news">
+          
+          <h3 data-aos="fade-up">{{blogs.title}}</h3>
+          <h5>{{blogs.author}}</h5>
+          <p class="lead" >
+              {{blogs.content}}
+            </p>
+           <br>
+            <img [src]="blogs.urlToImage"/>
+      </div>
+    </div>
+  </div>

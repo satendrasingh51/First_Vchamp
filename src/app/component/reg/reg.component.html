@@ -1,0 +1,137 @@
+<br><br><br><br>
+<div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img class="air" src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome</h3>
+                <p>You are 30 seconds away from earning your own money!</p>
+                <input type="submit" name="" value="More"/><br/>
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Login</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Apply as a Users</h3>
+                        <form #userform="ngForm" action="" class="form-group">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name *" value=""
+                                     name="firstname" ngModel #firstname="ngModel" required pattern="[A-Z]{3,20}"/>
+                                     <div *ngIf="firstname.invalid && firstname.touched" class="alert alert-danger">
+                                         <div *ngIf="firstname.errors.required">This is field required with Uppercase</div>
+                                         <div *ngIf="firstname.errors.pattern">Alphabate and Uppercase only</div>
+                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name *" value=""
+                                     name="lastname" ngModel #lastname="ngModel" required pattern="[A-Z]{3,20}"/>
+                                     <div *ngIf="lastname.invalid && lastname.touched" class="alert alert-danger">
+                                         <div *ngIf="lastname.errors.required">This is field required with Uppercase</div>
+                                         <div *ngIf="lastname.errors.pattern">Alphabate and Uppercase only</div>
+                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="password *" value=""
+                                    name="password" ngModel #password="ngModel" required pattern="[A-Z]{1}[a-z]{1,10}[!@#$%&*]{1}[0-9]{1,10}"/>
+                                    <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
+                                        <div *ngIf="password.errors.required">This is field required</div>
+                                        <div *ngIf="password.errors.pattern">Example = Password@12345</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="conpassword" class="form-control" placeholder="conpassword *" value=""
+                                    name="conpassword" ngModel #conpassword="ngModel" required pattern="[A-Z]{1}[a-z]{1,10}[!@#$%&*]{1}[0-9]{1,10}"/>
+                                    <div *ngIf="conpassword.invalid && conpassword.touched" class="alert alert-danger">
+                                        <div *ngIf="conpassword.errors.required">This is field required</div>
+                                        <div *ngIf="conpassword.errors.pattern">Example = Password@12345</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Adhar Name *" value=""
+                                     name="adhar" ngModel #adhar="ngModel" required pattern="[0-9]{12}"/>
+                                     <div *ngIf="adhar.invalid && adhar.touched" class="alert alert-danger">
+                                         <div *ngIf="adhar.errors.required">This is field required</div>
+                                         <div *ngIf="adhar.errors.pattern">Number 12 only</div>
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="enter email id *" 
+                                    required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" #email="ngModel" ngModel>
+                                    <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+                                        <div *ngIf="email.errors.required"> Email is required</div>
+                                        <div *ngIf="email.errors.pattern">  example123@gmail.com  </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="mobile" class="form-control" name="mobile" placeholder="enter mobile id" 
+                                    required pattern="[0-9]{10}" #mobile="ngModel" ngModel>
+                                    <div *ngIf="mobile.invalid && mobile.touched" class="alert alert-danger">
+                                        <div *ngIf="mobile.errors.required"> Mobile is required</div>
+                                        <div *ngIf="mobile.errors.pattern">  Only 10 Number  </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="pan" class="form-control" name="pan" placeholder="enter pan " 
+                                    required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" #pan="ngModel" ngModel>
+                                    <div *ngIf="pan.invalid && pan.touched" class="alert alert-danger">
+                                        <div *ngIf="pan.errors.required"> Pan number is required</div>
+                                        <div *ngIf="pan.errors.pattern">  Example = ABCDE12345F </div>
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="address" placeholder="enter address *" 
+                                    required pattern="[A-Z]{5-20}" #address="ngModel" ngModel></textarea>
+                                    <div *ngIf="address.invalid && address.touched" class="alert alert-danger">
+                                        <div *ngIf="address.errors.required"> Address is required</div>
+                                        <div *ngIf="address.errors.pattern"> Alphabate and Uppercase only </div>
+                                      </div>
+                                
+                                </div>
+                                <button type="submit" class="btn btn-warning" [disabled]="userForm.invalid" >Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3  class="register-heading">Login Form</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username *" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Password *" value="" required/>
+                                </div>
+                                <a href="#">Forget Password?</a>
+                                <input type="submit" name="submit" value="Login" class="btnRegister">
+                            </div>
+                                    <div class="card bg-light">
+                                        <article class="card-body mx-auto" style="max-width: 400px;">
+                                            <h4 class="card-title mt-3 text-center">Create Account</h4>
+                                            <p class="text-center">Get started with your free account</p>
+                                            <p>
+                                                <a href="" class="btn btn-block btn-gmail"> <i class="fab fa-envelope-f"></i>   Login via Gmail</a>
+                                                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+                                            </p>
+                                            <p class="divider-text">
+                                                <span class="bg-light">OR</span>
+                                            </p>
+                                        
+                                        </article>
+                                    </div> <!-- card.// -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>

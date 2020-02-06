@@ -1,0 +1,112 @@
+
+
+<div class="container">
+  <!-- <div class="row"> -->
+    <h1 class="text text-center">Registration Form</h1>
+    <div> 
+      <form #userform="ngForm" action="" class="form-group">
+      <div>
+        <label for="firstname">Firs Name</label>
+        <input type="text" class="form-control" name="firstname" placeholder="enter first name" 
+        required pattern="[A-Z]{3,20}" min="3" max="10" #Firstname="ngModel" ngModel>
+        <div *ngIf="Firstname.invalid && Firstname.touched" class="alert alert-danger">
+            <div *ngIf="Firstname.errors.required"> Firstname and Uppercase is required</div>
+            <div *ngIf="Firstname.errors.pattern">  Alphabate and Uppercase only  </div>
+          </div>
+      </div>
+     
+      <label for="lastname">Last Name</label>
+      <div>
+        <input type="text" class="form-control" name="lastname" placeholder="enter last name" 
+        required pattern="[A-Z]{3,20}" min="3" max="10" #Lastname="ngModel" ngModel>
+        <div *ngIf="Lastname.invalid && Lastname.touched" class="alert alert-danger">
+            <div *ngIf="Lastname.errors.required"> Lastname and Uppercase is required</div>
+            <div *ngIf="Lastname.errors.pattern">  Alphabate and Uppercase only  </div>
+        </div>
+      </div>
+      
+      <label for="email">Email Id</label>
+      <div>
+        <input type="email" class="form-control" name="email" placeholder="enter email id" 
+        required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" #email="ngModel" ngModel>
+        <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+            <div *ngIf="email.errors.required"> Email is required</div>
+            <div *ngIf="email.errors.pattern">  example123@gmail.com  </div>
+          </div>
+      </div>
+  
+      <label for="mobile">Mobile</label>
+      <div>
+        <input type="text" class="form-control" name="mobile" placeholder="enter mobile number" 
+        required pattern="[0-9]{10}" #mobile="ngModel" ngModel>
+        <div *ngIf="mobile.invalid && mobile.touched" class="alert alert-danger">
+            <div *ngIf="mobile.errors.required"> Firstname is required</div>
+            <div *ngIf="mobile.errors.pattern">  Number 10 Only  </div>
+          </div>
+      </div>
+  
+      <div>
+        <label for="city">City</label>
+        <select class="custom-select form-control" name="option" id="" >
+          <option value="default">Please Select City</option>
+          <option *ngFor="let city of Cites" [value]="city.id" required>{{ city.name }}</option>
+        </select>
+      </div><br>
+      <div class="checkbox">
+        <label for="education">Education:</label>
+        <select class="custom-select form-control">
+          <option value="default">Please Select Education</option>
+          <option *ngFor="let educated of education">{{educated}}</option>
+        </select>
+    </div><br>
+      <div class="radio">
+        <label for="education">Gender:</label>
+        <select class="custom-select form-control">
+          <option value="default">Please Select Gender</option>
+          <option *ngFor="let gen of gender">{{gen}}</option>
+        </select>
+      </div><br>
+      <!-- <button type="submit" class="btn btn-warning" [disabled]="Form.invalid" >Submit</button> -->
+      </form>
+    </div>
+  <!-- </div> -->
+</div>
+
+
+<hr>
+
+<div class="singh">
+
+<h1>Costume Servise</h1>
+
+
+<div class="alltest">
+  <p>alltesting works!
+    <br>
+      {{data}}
+  
+  </p>
+
+
+<table *ngFor="let data of showbiodata" class="table table-hover">
+         <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Roll</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.Class}}</td>
+            <td>{{data.roll}}</td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+</div>
+
+
+
+
